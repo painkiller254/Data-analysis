@@ -1,5 +1,8 @@
+from numpy import *
 import pandas as pd
 import numpy as np
+import math
+import matplotlib.pyplot as plt
 
 data = np.array(['O', 'S', 'S', 'A'])
 S1 = pd.Series(data) # Without adding index
@@ -82,14 +85,12 @@ print("Add two series\n")
 AddSeries(my_series_11, my_series1)
 
 # Visualizing data series
-import matplotlib.pyplot as plt
+
 plt.plot(my_series2)
 plt.ylabel('index')
 plt.show()
 
-from numpy import *
-import math
-import matplotlib.pyplot as plt
+
 t = linspace(0, 2*math.pi, 400)
 a = sin(t)
 b = cos(t)

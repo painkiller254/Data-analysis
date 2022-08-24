@@ -60,7 +60,7 @@ df1['Average'] = round((df1['Test1']+df1['Test2']+df1['Project'])/3, 2)
 print(df1)
 
 # Column Deletion
-df2 = df1
+df2 = df1.copy()
 print(df2)
 print("Deleting the first column using DEL function:")
 # del df2['Test 2']
@@ -69,5 +69,32 @@ print("Deleting the first column using DEL function:")
 df2.pop('Project')
 print(df2)
 
+# row selction
+print("\nselect iloc function to retrieve row number 2")
+print(df1.iloc[2])
+print("\nslice rows")
+print(df1[2:4])
 
+# row addition
+data = { 'Test1' : pd.Series([70, 55, 89], 
+index=['Ahmed', 'Omar', 'Ali']),
+ 'Test2' : pd.Series([56, 82, 77, 65], 
+index=['Ahmed', 'Omar', 'Ali', 'Salwa']),
+ 'Project' : pd.Series([87, 83, 90, 67], 
+index=['Ahmed', 'Omar', 'Ali', 'Salwa']),
+ 'Average' : pd.Series([71, 73.33, 85.33, 66], 
+index=['Ahmed', 'Omar', 'Ali', 'Salw'])}
+
+data = pd.DataFrame(data)
+print(data)
+print("\n")
+df2 = pd.DataFrame([[80, 70, 90, 80]], columns = ['Test1', 'Test2', 'Project', 'Average'], index=['Khalid'])
+data.append(df2)
+print(data)
+
+# row deletion
+print(data)
+print('\n')
+data = data.drop('Omar')
+print(data)
 
